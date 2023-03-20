@@ -103,6 +103,9 @@ def remove_options_tail (in_string):
     from itertools import takewhile
     return ' '.join(takewhile(lambda x: not x.startswith('-'), in_string.split(' ')))
 
+# The remove_options_tail() doesn't support ccache
+CCACHE_DISABLE = '1'
+
 EXTRA_OEMAKE += "LD='${@remove_options_tail(d.getVar('LD'))}'"
 
 EXTRA_OEMAKE += "CC='${@remove_options_tail(d.getVar('CC'))}'"
