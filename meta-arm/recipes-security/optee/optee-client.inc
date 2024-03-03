@@ -20,6 +20,7 @@ S = "${WORKDIR}/git"
 EXTRA_OECMAKE = " \
     -DBUILD_SHARED_LIBS=ON \
     -DCFG_TEE_FS_PARENT_PATH='${localstatedir}/lib/tee' \
+    -DCFG_TEE_PLUGIN_LOAD_PATH='${libdir}/tee-supplicant/plugins/' \
 "
 EXTRA_OECMAKE:append:toolchain-clang = " -DCFG_WERROR=0"
 
