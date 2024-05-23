@@ -11,6 +11,15 @@ SRC_URI:append:corstone1000  = " \
     file://0007-plat-corstone1000-Initialize-capsule-update-provider.patch \
     file://0008-plat-corstone1000-add-client_id-for-FMP-service.patch \
     file://0009-Remove-Werror-flag.patch \
+    file://0010-Remove-PLATFORM_HAS_ATTEST_PK-define-from-IAT-test.patch \
+    file://0011-Fix-Avoid-redefinition-of-variables.patch \
+    file://0012-Fix-GetNextVariableName-NameSize-input.patch \
+    file://0013-Fix-error-handling-of-variable-index-loading.patch \
+    file://0014-Provide-crypto-api-to-create-uefi-priv-var-fingerpri.patch \
+    file://0015-Add-timestamp-validation-for-uefi-variables.patch \
+    file://0016-Isolate-common-uefi-variable-authentication-steps.patch \
+    file://0017-Implement-Private-Authenticated-Variable-verificatio.patch \
+    file://0018-Change-RSS_COMMS-cmake-variables-to-cahce-vars.patch \
     "
 
 
