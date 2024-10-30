@@ -66,6 +66,7 @@ KMACHINE:fvp-base = "fvp"
 FILESEXTRAPATHS:prepend:fvp-base := "${ARMBSPFILESPATHS}:${ARMFILESPATHS}"
 SRC_URI:append:fvp-base = " \
     file://0001-arm64-dts-fvp-Enable-virtio-rng-support.patch \
+    file://0001-net-tighten-bad-gso-csum-offset-check-in-virtio_net_.patch \
     file://tee.cfg \
     ${@bb.utils.contains('MACHINE_FEATURES', 'ts-smm-gateway', \
                          'file://no-strict-devmem.cfg', '' , d)} \
@@ -77,6 +78,9 @@ SRC_URI:append:fvp-base = " \
 #
 COMPATIBLE_MACHINE:juno = "juno"
 FILESEXTRAPATHS:prepend:juno := "${ARMBSPFILESPATHS}"
+SRC_URI:append:juno = " \
+    file://no-fsl-ifc-nand.cfg \
+    "
 
 #
 # Musca B1/S2 can't run Linux
@@ -103,6 +107,7 @@ SRC_URI:append:n1sdp = " \
     file://enable-realtek-R8169.cfg \
     file://enable-usb_conn_gpio.cfg \
     file://usb_xhci_pci_renesas.cfg \
+    file://no-fsl-ifc-nand.cfg \
     "
 # Since we use the intree defconfig and the preempt-rt turns off some configs
 # do_kernel_configcheck will display warnings. So, lets disable it.
